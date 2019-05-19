@@ -1,0 +1,61 @@
+.markdown-editor {
+  .markdown-draft-toolbar {
+    border: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .markdown-editor-header .ant-form-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .markdown-draft-toolbar .rdw-dropdown-optionwrapper {
+    max-height: 130px;
+  }
+
+  .markdown-draft-toolbar .rdw-option-wrapper {
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 12px;
+      height: auto;
+    }
+  }
+
+  .markdown-draft-editor {
+    @extend .px7;
+
+    border: 0;
+    min-height: 137px;
+    max-height: 137px;
+  }
+
+  .markdown-editor-preview {
+    border: 0;
+    outline: none;
+    line-height: inherit;
+  }
+
+  .markdown-editor-raw textarea {
+    border: 0;
+    padding: 12px;
+  }
+
+  .markdown-editor-nav {
+    margin-bottom: -1px;
+
+    button {
+      width: 50px;
+      // margin-left: 0;
+      border-bottom: 0;
+      border-radius: 2px 0 0 0;
+
+      & ~ button {
+        // border-left: 0;
+        border-radius: 0 2px 0 0;
+      }
+    }
+  }
+}

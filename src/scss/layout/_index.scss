@@ -1,0 +1,11 @@
+#root {
+  // react application root
+  // @see public/index.html
+  @extend .is-full-layout;
+}
+
+@import './_layout.scss';
+@import './_navigation.scss';
+@import './_header.scss';
+@import './_pages-container.scss';
+@import './_footer.scss';

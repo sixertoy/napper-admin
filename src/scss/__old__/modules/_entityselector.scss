@@ -1,0 +1,7 @@
+.entityselector {
+  width: 100%;
+}
+
+.entityselector-dropdown li ~ li {
+  margin-top: 0 !important;
+}

@@ -1,0 +1,67 @@
+.ant-upload img {
+  width: 100%;
+}
+
+.ant-btn {
+  padding: 0 12px;
+  font-size: 0.9em;
+}
+
+.ant-btn + .ant-btn {
+  margin-left: 8px;
+}
+
+.ant-transfer-operation .ant-btn + .ant-btn {
+  margin-left: 0;
+}
+
+.ant-transfer-list {
+  width: 47%;
+}
+
+.ant-tag {
+  height: 30px;
+  line-height: 30px;
+}
+
+.ant-tooltip-note .ant-tooltip-inner {
+  font-size: 0.8em;
+}
+
+.ant-form fieldset {
+  position: relative;
+  padding: 56px 12px 24px 12px;
+}
+
+.ant-form legend {
+  top: 0;
+  left: 0;
+  border: 0;
+  padding: 12px;
+  font-size: 0.9em;
+  position: absolute;
+  font-weight: lighter;
+}
+
+.ant-form-item {
+  margin-bottom: 12px;
+}
+
+.ant-back-top {
+  right: 20px;
+}
+
+/* ----------------------------------------
+
+ COMPOSED
+
+---------------------------------------- */
+
+.formsidebar .ant-affix {
+  margin-top: 20px;
+}
+
+.url-input .ant-select {
+  width: 80px;
+  font-size: 0.7em;
+}

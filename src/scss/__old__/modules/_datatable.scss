@@ -1,0 +1,38 @@
+.datatable {
+  width: 100%;
+  display: block;
+  overflow: auto;
+}
+
+.datatable table th:first-child {
+  border-radius: rem(4px 0 0 4px);
+}
+
+.datatable table th:last-child {
+  border-radius: rem(0 4px 4px 0);
+}
+
+.datatable table .actions {
+  padding: rem(7px);
+  text-align: center;
+}
+
+.datatable table .actions button ~ button {
+  margin-left: rem(5px);
+}
+
+.datatable table .actions-1 {
+  width: rem(8px);
+}
+
+.datatable table .actions-2 {
+  width: rem(8px);
+}
+
+.datatable table .actions-3 {
+  width: rem(10px);
+}
+
+.datatable table .actions-4 {
+  width: rem(10px);
+}

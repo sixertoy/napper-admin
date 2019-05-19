@@ -1,0 +1,46 @@
+.arrays-input > .ant-form-item {
+  margin: 0;
+  padding: 0;
+}
+
+.arrays-input .list .item {
+  margin-bottom: 7px;
+
+  .col-left {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8f8f8;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .col-right {
+    width: 40px;
+
+    .ant-btn {
+      height: 100%;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
+  .url-input {
+    width: 100%;
+  }
+
+  .ant-input-number {
+    width: 60px;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: 3px;
+  }
+
+  .ant-form-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: inline-block;
+
+    + .ant-form-item {
+      margin-left: 12px;
+    }
+  }
+}

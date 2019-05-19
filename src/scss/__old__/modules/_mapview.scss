@@ -1,0 +1,52 @@
+.mapview-input,
+.mapprops-input,
+.mapview-container {
+  width: 100%;
+
+  .mapview-input-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .vertical-ruler,
+  .horizontal-ruler {
+    z-index: 1000;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .vertical-ruler {
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+  }
+
+  .horizontal-ruler {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+  }
+
+  .ant-form-item-control {
+    height: 100%;
+  }
+
+  .ant-form-item-control-wrapper {
+    height: 100%;
+  }
+
+  .leaflet-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    cursor: default;
+  }
+}

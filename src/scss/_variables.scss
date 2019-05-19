@@ -1,0 +1,12 @@
+$default-padding: 12px !default;
+
+// font-size: .fsN
+$FontSizes: (9, 11, 12, 14, 16, 20, 30, 60) !default;
+
+// margin: mN, mxN, myN, mlN, mrN, mtN, mbN
+// padding: pN, pxN, pyN, plN, prN, ptN, pbN
+$MarginPaddingSizes: (3, 7, 12, 20, 30, 60) !default;
+
+// border: bN, bxN, byN, brN, btN, blN, bbN
+// border-radius: rN,
+$BorderSizes: (1, 2, 3, 4, 8, 10, 12, 30) !default;

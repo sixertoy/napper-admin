@@ -1,0 +1,20 @@
+.is-button-group {
+  @extend .flex-columns;
+
+  > button {
+    @extend .flex-justify;
+  }
+
+  > button:first-child {
+    border-radius: rem(12px 0 0 12px);
+  }
+
+  > button:last-child {
+    border-radius: rem(0 12px 12px 0);
+  }
+
+  > button:only-child,
+  > button:first-child:last-child {
+    border-radius: rem(12px);
+  }
+}

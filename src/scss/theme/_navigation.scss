@@ -1,0 +1,23 @@
+// #EEEEEE
+#smartadmin-main-navigation {
+  background-color: $black;
+
+  .link,
+  .toggler {
+    color: $gray-0;
+  }
+
+  .link {
+    color: $white;
+  }
+
+  .link:hover,
+  .toggler:hover {
+    background-color: #22252a;
+  }
+
+  .link.active {
+    color: $black;
+    background-color: $white;
+  }
+}

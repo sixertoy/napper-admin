@@ -1,0 +1,29 @@
+/*
+.smartadmin-button {
+  border: 0;
+  padding: rem(7px);
+  border-radius: rem(4px);
+}
+*/
+
+.is-button {
+  @extend .p12;
+  @extend .no-border;
+  @extend .use-pointer;
+
+  border-radius: rem(12px);
+}
+
+.is-submit-button,
+.is-cancel-button {
+  @extend .is-button;
+  @extend .is-white-text;
+}
+
+.is-submit-button {
+  @extend .is-green-background;
+}
+
+.is-cancel-button {
+  @extend .is-red-background;
+}

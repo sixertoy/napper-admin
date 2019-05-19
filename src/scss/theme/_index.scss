@@ -1,0 +1,26 @@
+.is-rainbow {
+  background-image: linear-gradient(
+    312deg,
+    $rainbow0 0%,
+    $rainbow1 68%,
+    $rainbow2 100%
+  );
+}
+
+.is-red-background {
+  background-color: $red;
+}
+
+.is-green-background {
+  background-color: $green;
+}
+
+.is-blue-background {
+  background-color: $blue;
+}
+
+.is-white-background {
+  background-color: $white;
+}
+
+@import './_navigation.scss';

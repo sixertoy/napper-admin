@@ -1,0 +1,36 @@
+#smartadmin-main-navigation {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: rem(45px);
+  transition-duration: 0.5s;
+  transition-property: width;
+}
+
+#smartadmin-main-navigation nav {
+  width: 100%;
+  display: flex;
+
+  .icon {
+    width: rem(45px);
+    min-width: rem(45px);
+  }
+
+  .link,
+  .toggler {
+    @extend .is-full-width;
+  }
+
+  .toggler {
+    height: rem(30px);
+    font-size: rem(8px);
+    min-height: rem(30px);
+    line-height: rem(30px);
+  }
+
+  .link {
+    height: rem(45px);
+    min-height: rem(45px);
+    line-height: rem(45px);
+  }
+}

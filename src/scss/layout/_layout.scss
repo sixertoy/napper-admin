@@ -1,0 +1,16 @@
+#smartadmin-main-layout {
+  padding-left: rem(45px);
+  transition: padding-left 0.5s;
+}
+
+#smartadmin-main-layout.nav-opened {
+  padding-left: rem(200px);
+
+  #smartadmin-main-navigation {
+    width: rem(200px);
+  }
+}
+
+#smartadmin-main-layout.popin-opened {
+  overflow: hidden;
+}
