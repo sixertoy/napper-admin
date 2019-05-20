@@ -1,6 +1,6 @@
 {
   "name": "@iziges/napper-admin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Napper Admin Components",
   "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
   "license": "ISC",
@@ -43,7 +43,12 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.2.0",
@@ -73,12 +78,7 @@
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^3.0.0",
-    "stylelint-scss": "^3.6.1",
-    "@storybook/react": "^5.0.11",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "babel-loader": "^8.0.6"
+    "stylelint-scss": "^3.6.1"
   },
   "scripts": {
     "test": "jest",
