@@ -13,7 +13,7 @@ import createClient from './core/apollo';
 import SmartAdminMainLayout from './core-components/main-layout';
 import { Logger } from './core';
 
-const SmartAdmin = ({ manifest, routes, reducers }) => {
+const SmartAdmin = ({ manifest, reducers, routes }) => {
   Logger.debug(`
     **** Smart Admin Application Debug ****
     NODE_ENV => ${process.env.NODE_ENV}

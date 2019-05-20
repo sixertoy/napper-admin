@@ -13,6 +13,7 @@
     "lib"
   ],
   "dependencies": {
+    "@iziges/napper-admin": "ssh://git@github.com:sixertoy/napper-admin.git#latest",
     "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git#latest",
     "@iziges/napper-forms": "ssh://git@github.com:sixertoy/napper-forms.git#latest",
     "@iziges/napper-scss": "ssh://git@github.com:sixertoy/napper-scss.git#latest",
@@ -68,15 +69,22 @@
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-uglify": "^6.0.2",
+    "rollup-plugin-terser": "^4.0.4",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^3.0.0",
-    "stylelint-scss": "^3.6.1"
+    "stylelint-scss": "^3.6.1",
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "babel-loader": "^8.0.6"
   },
   "scripts": {
-    "test": "",
+    "test": "jest",
+    "start": "rollup -c -w",
     "build": "rollup -c",
-    "storybook": "start-storybook -p 9002 -c .storybook"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }

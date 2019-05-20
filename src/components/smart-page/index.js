@@ -8,7 +8,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Subpage from './subpage';
 import PageTitle from './page-title';
 import PageSubtitle from './page-subtitle';
-import SidebarControl from './sidebar-control';
+// import SidebarControl from './sidebar-control';
 import { slugify } from '../../utils/strings';
 import { pathnameToKey } from '../../utils/router';
 
@@ -41,8 +41,8 @@ const SmartPage = ({
   links,
   name,
   pageId,
-  subtitle,
   sidebarClassname,
+  subtitle,
   views,
 }) => (
   <div id={pageId} className="page">

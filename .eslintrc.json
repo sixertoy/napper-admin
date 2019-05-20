@@ -14,6 +14,11 @@
         "newlines-between": "always"
       }
     ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.js", "**/*.spec.js", "**/*.stories.js"] }
+    ],
+    "react/forbid-prop-types": [1, ["any", "array", "object"]],
     "react/prop-types": [2, { "skipUndeclared": false }],
     "react/jsx-filename-extension": [
       2,
