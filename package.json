@@ -13,7 +13,6 @@
     "lib"
   ],
   "dependencies": {
-    "@iziges/napper-admin": "ssh://git@github.com:sixertoy/napper-admin.git#latest",
     "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git#latest",
     "@iziges/napper-forms": "ssh://git@github.com:sixertoy/napper-forms.git#latest",
     "@iziges/napper-scss": "ssh://git@github.com:sixertoy/napper-scss.git#latest",
