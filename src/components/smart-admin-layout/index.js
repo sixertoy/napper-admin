@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import Types from '../../types';
 import Navigation from '../main-navigation';
 import PageHeader from './layout-header';
 import PageFooter from './layout-footer';
@@ -13,7 +14,7 @@ import PagesContainer from './pages-container';
 // import AppBreadcrumbs from './components/AppBreadcrumbs';
 import { mapStateToProps } from './connect';
 
-const SmartAdminMainLayout = ({ manifest, routes, className }) => (
+const SmartAdminMainLayout = ({ className, manifest, routes }) => (
   <div
     id="smartadmin-main-layout"
     className={`flex-1 is-full-layout ${className}`}>
@@ -46,8 +47,8 @@ const SmartAdminMainLayout = ({ manifest, routes, className }) => (
 
 SmartAdminMainLayout.propTypes = {
   className: PropTypes.string.isRequired,
-  manifest: PropTypes.object.isRequired,
-  routes: PropTypes.object.isRequired,
+  manifest: Types.ManifestType.isRequired,
+  routes: Types.RoutesType.isRequired,
 };
 
 export default compose(

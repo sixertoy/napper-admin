@@ -1,6 +1,6 @@
 import { getClassnameStates } from './utils';
 
-export const mapStateToProps = ({ showNavigation: minimized, popin }) => {
+export const mapStateToProps = ({ popin, showNavigation: minimized }) => {
   const className = getClassnameStates(popin, minimized);
   return {
     className,

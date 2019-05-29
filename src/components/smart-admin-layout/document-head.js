@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
+import Types from '../../types';
 import { usedebug } from '../../core/utils';
 import { getPageTitle, getBodyClass } from '../../utils';
 
@@ -23,8 +24,8 @@ const DocumentHead = ({ location, routes }) => {
 };
 
 DocumentHead.propTypes = {
-  location: PropTypes.object.isRequired,
-  routes: PropTypes.object.isRequired,
+  location: PropTypes.shape().isRequired,
+  routes: Types.RoutesType.isRequired,
 };
 
 export default withRouter(DocumentHead);

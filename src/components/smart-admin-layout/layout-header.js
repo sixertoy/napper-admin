@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import Types from '../../types';
 
 const LayoutHeader = ({ manifest }) => (
   <React.Fragment>
@@ -16,7 +17,7 @@ const LayoutHeader = ({ manifest }) => (
 LayoutHeader.defaultProps = {};
 
 LayoutHeader.propTypes = {
-  manifest: PropTypes.object.isRequired,
+  manifest: Types.ManifestType.isRequired,
 };
 
 export default LayoutHeader;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { unsafeArrayKeyIndex } from '../../../utils';
+import { unsafeArrayKeyIndex } from '../../utils';
 
 const GraphqlDebuggerItem = ({ item }) => {
   const date = new Date(item.time);

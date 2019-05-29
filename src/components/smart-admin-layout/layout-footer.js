@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import Types from '../../types';
 
 const LayoutFooter = ({ manifest }) => (
   <React.Fragment>
@@ -13,7 +14,7 @@ const LayoutFooter = ({ manifest }) => (
 );
 
 LayoutFooter.propTypes = {
-  manifest: PropTypes.object.isRequired,
+  manifest: Types.ManifestType.isRequired,
 };
 
 export default LayoutFooter;

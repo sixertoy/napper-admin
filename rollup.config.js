@@ -11,10 +11,7 @@ export default {
     ...Object.keys(pkg.peerDependencies || {}),
   ],
   input: 'src/index.js',
-  output: {
-    file: pkg.main,
-    format: 'cjs',
-  },
+  output: { file: pkg.main, format: 'cjs' },
   plugins: [
     resolve(),
     commonJS({ include: 'node_modules/**' }),

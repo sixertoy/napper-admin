@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 import { Redirect, Switch } from 'react-router-dom';
 
+import Types from '../../types';
 import { buildSmartPage } from './utils';
 
 const SmartLayoutPagesContainer = ({ routes }) => {
@@ -19,7 +19,7 @@ const SmartLayoutPagesContainer = ({ routes }) => {
 SmartLayoutPagesContainer.defaultProps = {};
 
 SmartLayoutPagesContainer.propTypes = {
-  routes: PropTypes.object.isRequired,
+  routes: Types.RoutesType.isRequired,
 };
 
 export default SmartLayoutPagesContainer;
