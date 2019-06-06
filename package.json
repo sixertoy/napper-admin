@@ -1,6 +1,6 @@
 {
   "name": "@iziges/napper-admin",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Napper Admin Components",
   "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "apollo-link-http": "^1.5.5",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
+    "lodash.get": "^4.4.2",
     "react-apollo": "^2.2.4",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.1.0",
@@ -44,6 +45,7 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-info": "^5.1.1",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
