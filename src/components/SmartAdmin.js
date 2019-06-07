@@ -14,25 +14,37 @@ import { Logger } from '../core';
 const nodeenv = process.env.NODE_ENV;
 const graphqluri = process.env.REACT_APP_GRAPHQL_URI;
 
-const SmartAdmin = ({ initialState, manifest, reducers, routes }) => {
-  Logger.debug(`
-    **** Smart Admin Application Debug ****
-    NODE_ENV => ${nodeenv}
-    REACT_APP_VERSION => ${manifest.version}
-    REACT_APP_GRAPHQL_URI => ${graphqluri}
-  `);
-  const store = configure(initialState, coreReducers, reducers);
-  const { client } = createClient(graphqluri, store);
-  return (
-    <Provider store={store}>
-      <ApolloProvider client={client}>
-        <BrowserRouter>
-          <SmartAdminMainLayout manifest={manifest} routes={routes} />
-        </BrowserRouter>
-      </ApolloProvider>
-    </Provider>
-  );
-};
+class SmartAdmin extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    const { initialState, reducers } = this.props;
+    this.store = configure(initialState, coreReducers, reducers);
+    this.client = createClient(graphqluri, this.store).client;
+  }
+
+  componentDidMount() {
+    const { manifest } = this.props;
+    Logger.debug(`
+      **** Smart Admin Application Debug ****
+      NODE_ENV => ${nodeenv}
+      REACT_APP_VERSION => ${manifest.version}
+      REACT_APP_GRAPHQL_URI => ${graphqluri}
+    `);
+  }
+
+  render() {
+    const { manifest, routes } = this.props;
+    return (
+      <Provider store={this.store}>
+        <ApolloProvider client={this.client}>
+          <BrowserRouter>
+            <SmartAdminMainLayout manifest={manifest} routes={routes} />
+          </BrowserRouter>
+        </ApolloProvider>
+      </Provider>
+    );
+  }
+}
 
 SmartAdmin.defaultProps = {
   initialState: {},
