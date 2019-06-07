@@ -42,8 +42,8 @@ const SmartTableRow = ({ cols, data, location }) => {
               key={`${KEY_PREFIX}::tbody::tr::${itemid}::td::${col.key}`}
               className={classname}>
               <Link to={`${destinationBase}/edit`} className="">
-                {!useicon && <span>{colvalue}</span>}
                 {useicon && renderValueAsIcon(colvalue)}
+                {!useicon && <span>{colvalue}</span>}
               </Link>
             </td>
           );

@@ -18,7 +18,7 @@ class SmartAdmin extends React.PureComponent {
   constructor(props) {
     super(props);
     const { initialState, reducers } = this.props;
-    this.store = configure(initialState, coreReducers, reducers);
+    this.store = configure(false, initialState, coreReducers, reducers);
     this.client = createClient(graphqluri, this.store).client;
   }
 
