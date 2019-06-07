@@ -10,7 +10,7 @@
     "node": "^10.6.0"
   },
   "files": [
-    "/dist"
+    "dist"
   ],
   "dependencies": {
     "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git#latest",
@@ -84,6 +84,7 @@
     "test": "jest",
     "dev": "rollup -c -w",
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "prepare": "npm run build"
   }
 }
