@@ -1,1 +1,1 @@
-export { default as SmartTable } from './components/smart-table/SmartTable';
+export * from './components/smart-table';

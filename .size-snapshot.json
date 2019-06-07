@@ -5,9 +5,9 @@
     "gzipped": 1897
   },
   "dist/bundle.esm.js": {
-    "bundled": 4614,
-    "minified": 4591,
-    "gzipped": 1592,
+    "bundled": 4639,
+    "minified": 4616,
+    "gzipped": 1597,
     "treeshaked": {
       "rollup": {
         "code": 4550,
@@ -19,8 +19,8 @@
     }
   },
   "dist/bundle.cjs.js": {
-    "bundled": 6412,
-    "minified": 6410,
-    "gzipped": 1897
+    "bundled": 6460,
+    "minified": 6458,
+    "gzipped": 1903
   }
 }
