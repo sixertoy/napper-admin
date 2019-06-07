@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { ColObject } from './types';
-import { KEY_PREFIX } from './constants';
+import { KEY_PREFIX } from '../utils';
+import { SmartTableColType } from '../types';
 
 const SmartTableColGroup = ({ cols }) => (
   <colgroup>
@@ -11,17 +10,14 @@ const SmartTableColGroup = ({ cols }) => (
         const key = `${KEY_PREFIX}::colgroup::col::${col.key}`;
         return <col key={key} />;
       })}
-    <col
-      key={`${KEY_PREFIX}::colgroup::col::actions`}
-      className="text-center"
-    />
+    <col key={`${KEY_PREFIX}::colgroup::col::actions`} className="" />
   </colgroup>
 );
 
 SmartTableColGroup.defaultProps = {};
 
 SmartTableColGroup.propTypes = {
-  cols: PropTypes.arrayOf(ColObject).isRequired,
+  cols: SmartTableColType.isRequired,
 };
 
 export default SmartTableColGroup;

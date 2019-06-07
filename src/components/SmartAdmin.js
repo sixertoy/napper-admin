@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { combineReducers } from 'redux';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
-
-// import 'antd/dist/antd.css';
 
 import Types from '../types';
 import configure from '../core/store';
@@ -14,16 +11,17 @@ import createClient from '../core/apollo';
 import SmartAdminMainLayout from './smart-admin-layout';
 import { Logger } from '../core';
 
-const SmartAdmin = ({ manifest, reducers, routes }) => {
+const nodeenv = process.env.NODE_ENV;
+const graphqluri = process.env.REACT_APP_GRAPHQL_URI;
+
+const SmartAdmin = ({ initialState, manifest, reducers, routes }) => {
   Logger.debug(`
     **** Smart Admin Application Debug ****
-    NODE_ENV => ${process.env.NODE_ENV}
+    NODE_ENV => ${nodeenv}
     REACT_APP_VERSION => ${manifest.version}
-    REACT_APP_GRAPHQL_URI => ${process.env.REACT_APP_GRAPHQL_URI}
+    REACT_APP_GRAPHQL_URI => ${graphqluri}
   `);
-  const mergedReducers = combineReducers({ ...coreReducers, ...reducers });
-  const store = configure(mergedReducers);
-  const graphqluri = process.env.REACT_APP_GRAPHQL_URI;
+  const store = configure(initialState, coreReducers, reducers);
   const { client } = createClient(graphqluri, store);
   return (
     <Provider store={store}>
@@ -36,7 +34,12 @@ const SmartAdmin = ({ manifest, reducers, routes }) => {
   );
 };
 
+SmartAdmin.defaultProps = {
+  initialState: {},
+};
+
 SmartAdmin.propTypes = {
+  initialState: Types.shape(),
   manifest: Types.ManifestType.isRequired,
   reducers: PropTypes.shape().isRequired,
   routes: Types.RoutesType.isRequired,

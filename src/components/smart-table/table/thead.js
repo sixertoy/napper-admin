@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { KEY_PREFIX } from './constants';
+import { KEY_PREFIX } from '../utils';
+import { SmartTableColType } from '../types';
 
 const SmartTableThead = ({ cols }) => (
   <thead>
@@ -25,10 +25,8 @@ const SmartTableThead = ({ cols }) => (
   </thead>
 );
 
-SmartTableThead.defaultProps = {};
-
 SmartTableThead.propTypes = {
-  cols: PropTypes.array.isRequired,
+  cols: SmartTableColType.isRequired,
 };
 
 export default SmartTableThead;

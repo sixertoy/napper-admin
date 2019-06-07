@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const SmartDatatableCaption = ({ provider }) => {
   const count = provider.length;
   return (
-    <caption className="text-left is-italic p12">
+    <caption className="">
       <span>{count} élément(s)</span>
     </caption>
   );

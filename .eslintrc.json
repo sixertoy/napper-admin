@@ -25,7 +25,7 @@
         ]
       }
     ],
-    "react/forbid-prop-types": [1, ["any", "array", "object"]],
+    "react/forbid-prop-types": [2, { "forbid": ["any"] }],
     "react/prop-types": [2, { "skipUndeclared": false }],
     "react/jsx-filename-extension": [
       2,

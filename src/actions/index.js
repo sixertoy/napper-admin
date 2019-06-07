@@ -1,5 +1,4 @@
 import { TOGGLE_SIDEBAR, TOGGLE_NAVIGATION } from '../action-types';
-
 import SmartDeletePopin from '../components/smart-popins/SmartDeletePopin';
 
 /* ------------------------------------------

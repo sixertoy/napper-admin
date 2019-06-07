@@ -1,2 +1,1 @@
-export * from './components/buttons';
-export { default as SmartAdmin } from './components/SmartAdmin';
+export { default as SmartTable } from './components/smart-table/SmartTable';
