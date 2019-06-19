@@ -28,7 +28,7 @@ const reduxErrorLink = dispatch =>
     const { operationName, variables } = operation;
     const details = `${operationName} => ${JSON.stringify(variables)}`;
     if (graphQLErrors) {
-      graphQLErrors.forEach(({ message, locations, path }) => {
+      graphQLErrors.forEach(({ locations, message, path }) => {
         const [{ column, line }] = locations;
         const msg = `[GraphQL error]: ${message}, Path: ${path}, Line: ${line}, Column: ${column}`;
         Logger.debug(msg);

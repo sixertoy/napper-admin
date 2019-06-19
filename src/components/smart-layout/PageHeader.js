@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Types from '../../types';
+import { ManifestType } from '../types';
 
-const LayoutHeader = ({ manifest }) => (
-  <React.Fragment>
+const PageHeader = ({ manifest }) => (
+  <div className="flex-0 is-rainbow is-white-text p30">
     <h1 className="title is-uppercase is-white-text">
       <span>{manifest.name}</span>
     </h1>
@@ -11,13 +11,13 @@ const LayoutHeader = ({ manifest }) => (
       <small>{manifest.description}</small>
     </h6>
     <div className="user align-right" />
-  </React.Fragment>
+  </div>
 );
 
-LayoutHeader.defaultProps = {};
+PageHeader.defaultProps = {};
 
-LayoutHeader.propTypes = {
-  manifest: Types.ManifestType.isRequired,
+PageHeader.propTypes = {
+  manifest: ManifestType.isRequired,
 };
 
-export default LayoutHeader;
+export default PageHeader;

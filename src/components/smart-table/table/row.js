@@ -19,9 +19,11 @@ const renderActionsButton = (id, basedest) => (
   <td key={`${KEY_PREFIX}::tbody::tr::${id}::actions`}>
     <Link to={`${basedest}/edit`} className="">
       <i className="icon icon-edit" />
+      <span>Edit</span>
     </Link>
-    <Link to={`${basedest}/delete`} className="">
+    <Link to={`${basedest}/delete}`} className="">
       <i className="icon icon-delete" />
+      <span>Delete</span>
     </Link>
   </td>
 );
