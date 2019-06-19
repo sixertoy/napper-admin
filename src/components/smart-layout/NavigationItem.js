@@ -1,30 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-const parseDestination = path => {
-  const rootpath = `/${path.split('/').slice(1, 2)}`;
-  return rootpath;
-};
+import NavigationItemComponent from './NavigationItemComponent';
+import { toggleNavigation } from '../../actions';
 
-const NavigationItem = ({ icon, minimized, name, path, toggle }) => (
-  <NavLink
-    exact={false}
-    to={parseDestination(path)}
-    onClick={() => toggle(minimized)}
-    activeClassName="active disabled"
-    className="link is-block no-overflow">
-    <i className={`icon icon-${icon} text-center is-inline-block`} />
-    <span className="label">{name}</span>
-  </NavLink>
-);
+const mapStateToProps = ({ showNavigation: minimized }) => ({
+  minimized,
+});
 
-NavigationItem.propTypes = {
-  icon: PropTypes.string.isRequired,
-  minimized: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-  toggle: PropTypes.func.isRequired,
-};
+const mapDispatchToProps = dispatch => ({
+  toggle: minimized => {
+    if (minimized) return;
+    dispatch(toggleNavigation());
+  },
+});
 
-export default NavigationItem;
+export default compose(
+  withRouter,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(NavigationItemComponent);

@@ -1,4 +1,4 @@
-.smart-datatable {
+.napper-admin-datatable {
   @extend .is-block;
   @extend .no-overflow;
 
@@ -7,56 +7,56 @@
 
 /* ----- THEAD ----- */
 
-.smartadmin-datatable th {
+.napper-admin-datatable th {
   border-right: 1px solid #eeeeee;
 }
 
-.smartadmin-datatable th:last-child {
+.napper-admin-datatable th:last-child {
   border-right: 0;
   border-radius: rem(0 12px 12px 0);
 }
 
-.smartadmin-datatable th:first-child {
+.napper-admin-datatable th:first-child {
   border-radius: rem(12px 0 0 12px);
 }
 
-.smartadmin-datatable th:only-child,
-.smartadmin-datatable th:first-child:last-child {
+.napper-admin-datatable th:only-child,
+.napper-admin-datatable th:first-child:last-child {
   border-radius: rem(12px);
 }
 
 /* ----- TBODY ----- */
 
-.smartadmin-datatable tr:nth-child(2n) {
+.napper-admin-datatable tr:nth-child(2n) {
   background-color: #f8f8f8;
 }
 
-.smartadmin-datatable td:last-child {
+.napper-admin-datatable td:last-child {
   border-right: 0;
 }
 
-.smart-datatable table .actions {
+.napper-admin-datatable table .actions {
   @extend .text-center;
 
   padding: rem(7px);
 }
 
-.smart-datatable table .actions button ~ button {
+.napper-admin-datatable table .actions button ~ button {
   margin-left: rem(5px);
 }
 
-.smart-datatable table .actions-1 {
+.napper-admin-datatable table .actions-1 {
   width: rem(8px);
 }
 
-.smart-datatable table .actions-2 {
+.napper-admin-datatable table .actions-2 {
   width: rem(8px);
 }
 
-.smart-datatable table .actions-3 {
+.napper-admin-datatable table .actions-3 {
   width: rem(10px);
 }
 
-.smart-datatable table .actions-4 {
+.napper-admin-datatable table .actions-4 {
   width: rem(10px);
 }

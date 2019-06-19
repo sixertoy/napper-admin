@@ -1,16 +1,17 @@
 import React from 'react';
 
 import { ManifestType } from '../types';
+import { getAdminElementId } from '../../helpers';
 
 const PageFooter = ({ manifest }) => (
-  <div className="fs12 flex-0 flex-columns flex-between p20 mt60">
+  <footer id={getAdminElementId('footer')}>
     <div className="lh16">
       <span>{manifest.copyright}</span>
     </div>
     <div className="lh16">
       <span>{`v${manifest.version}`}</span>
     </div>
-  </div>
+  </footer>
 );
 
 PageFooter.propTypes = {

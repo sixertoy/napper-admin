@@ -1,0 +1,23 @@
+#napper-admin-header {
+  @extend .p30;
+  @extend .flex-0;
+  @extend .is-rainbow;
+  @extend .is-white-text;
+
+  .title {
+    font-size: rem(44px);
+    letter-spacing: rem(10px);
+  }
+
+  .title span {
+    display: block;
+  }
+
+  .subtitle {
+    color: #512d5a;
+    font-size: rem(9px);
+    display: inline-block;
+    letter-spacing: rem(3px);
+    background-color: $white;
+  }
+}

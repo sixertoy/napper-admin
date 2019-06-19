@@ -1,0 +1,62 @@
+.smart-datatable {
+  @extend .is-block;
+  @extend .no-overflow;
+
+  width: 100%;
+}
+
+/* ----- THEAD ----- */
+
+.smartadmin-datatable th {
+  border-right: 1px solid #eeeeee;
+}
+
+.smartadmin-datatable th:last-child {
+  border-right: 0;
+  border-radius: rem(0 12px 12px 0);
+}
+
+.smartadmin-datatable th:first-child {
+  border-radius: rem(12px 0 0 12px);
+}
+
+.smartadmin-datatable th:only-child,
+.smartadmin-datatable th:first-child:last-child {
+  border-radius: rem(12px);
+}
+
+/* ----- TBODY ----- */
+
+.smartadmin-datatable tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.smartadmin-datatable td:last-child {
+  border-right: 0;
+}
+
+.smart-datatable table .actions {
+  @extend .text-center;
+
+  padding: rem(7px);
+}
+
+.smart-datatable table .actions button ~ button {
+  margin-left: rem(5px);
+}
+
+.smart-datatable table .actions-1 {
+  width: rem(8px);
+}
+
+.smart-datatable table .actions-2 {
+  width: rem(8px);
+}
+
+.smart-datatable table .actions-3 {
+  width: rem(10px);
+}
+
+.smart-datatable table .actions-4 {
+  width: rem(10px);
+}

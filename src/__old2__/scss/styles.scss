@@ -1,0 +1,8 @@
+@import './_colors.scss';
+@import './_variables.scss';
+@import '~@smart-core/scss/lib/styles.scss';
+
+// application
+@import './theme/_index.scss';
+@import './components/_index.scss';
+@import './layout/_index.scss';

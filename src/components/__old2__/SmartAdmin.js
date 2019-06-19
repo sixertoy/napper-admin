@@ -1,33 +1,34 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import { ApolloProvider } from 'react-apollo';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
 
+import Types from '../types';
 import configure from '../core/store';
 import coreReducers from '../reducers';
 import createClient from '../core/apollo';
 import SmartLayout from './smart-layout/SmartLayout';
-import Types from './types';
-import Logger from '../core/logger';
+import { Logger } from '../core';
 
-const { NODE_ENV, REACT_APP_GRAPHQL_URI } = process.env;
+const nodeenv = process.env.NODE_ENV;
+const graphqluri = process.env.REACT_APP_GRAPHQL_URI;
 
 class SmartAdmin extends React.PureComponent {
   constructor(props) {
     super(props);
     const { initialState, reducers } = this.props;
     this.store = configure(false, initialState, coreReducers, reducers);
-    this.client = createClient(REACT_APP_GRAPHQL_URI, this.store).client;
+    this.client = createClient(graphqluri, this.store).client;
   }
 
   componentDidMount() {
     const { manifest } = this.props;
     Logger.debug(`
-      **** SmartAdmin Debug ****
-      NODE_ENV => ${NODE_ENV}
+      **** Smart Admin Application Debug ****
+      NODE_ENV => ${nodeenv}
       REACT_APP_VERSION => ${manifest.version}
-      REACT_APP_GRAPHQL_URI => ${REACT_APP_GRAPHQL_URI}
+      REACT_APP_GRAPHQL_URI => ${graphqluri}
     `);
   }
 

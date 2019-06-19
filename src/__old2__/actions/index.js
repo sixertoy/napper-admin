@@ -1,8 +1,5 @@
-export const TOGGLE_SIDEBAR = 'SmartCore:Admin:onToggleSidebar';
-export const TOGGLE_NAVIGATION = 'SmartCore:Admin:onToggleNavigation';
-
-// import { TOGGLE_SIDEBAR, TOGGLE_NAVIGATION } from '../action-types';
-// import SmartDeletePopin from '../components/smart-popins/SmartDeletePopin';
+import { TOGGLE_SIDEBAR, TOGGLE_NAVIGATION } from '../action-types';
+import SmartDeletePopin from '../components/smart-popins/SmartDeletePopin';
 
 /* ------------------------------------------
 
@@ -40,8 +37,8 @@ export const openPopin = opts => ({
   type: 'onOpenPopin',
 });
 //
-// export const openDeletePopin = opts =>
-//   openPopin({ ...opts, Type: SmartDeletePopin });
+export const openDeletePopin = opts =>
+  openPopin({ ...opts, Type: SmartDeletePopin });
 
 /* ------------------------------------------
 

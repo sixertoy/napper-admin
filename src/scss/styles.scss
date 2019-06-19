@@ -1,8 +1,7 @@
-@import './_colors.scss';
-@import './_variables.scss';
-@import '~@smart-core/scss/lib/styles.scss';
+@import 'config';
+@import '~@iziges/napper-scss/styles.scss';
 
 // application
-@import './theme/_index.scss';
-@import './components/_index.scss';
-@import './layout/_index.scss';
+@import 'helpers/index';
+@import 'components/index';
+@import 'layout/index';

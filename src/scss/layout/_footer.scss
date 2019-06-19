@@ -1,4 +1,11 @@
-#smartadmin-main-footer {
+#napper-admin-footer {
+  @extend .fs12;
+  @extend .flex-0;
+  @extend .flex-columns;
+  @extend .flex-between;
+  @extend .p20;
+  @extend .mt60;
+
   height: rem(56px);
   min-height: rem(56px);
   max-height: rem(56px);
