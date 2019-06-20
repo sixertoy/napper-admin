@@ -1,8 +1,12 @@
+import autoprefixer from 'autoprefixer';
 import babel from 'rollup-plugin-babel';
 import commonJS from 'rollup-plugin-commonjs';
+import cssnano from 'cssnano';
+import postcss from 'postcss';
 import resolve from 'rollup-plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import sass from 'rollup-plugin-sass';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import { terser } from 'rollup-plugin-terser';
 
 import pkg from './package.json';
 
@@ -18,6 +22,13 @@ export default {
   ],
   plugins: [
     resolve(),
+    sass({
+      output: 'lib/styles.css',
+      processor: css =>
+        postcss([autoprefixer, cssnano])
+          .process(css)
+          .then(result => result.css),
+    }),
     commonJS({ include: 'node_modules/**' }),
     babel({ exclude: 'node_modules/**' }),
     terser(),

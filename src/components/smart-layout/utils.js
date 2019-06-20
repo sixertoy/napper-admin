@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
-// import { slugify } from '@iziges/napper-core';
-import { slugify } from '../../../napper-core/lib';
+import { slugify } from '@iziges/napper-core';
 
 export const getRouteItemUniqKey = (...strings) =>
   strings
