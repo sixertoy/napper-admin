@@ -27,14 +27,14 @@
     "react-apollo": "^2.2.4",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.1.0",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^4.3.0",
     "redux": "^4.0.1"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "^4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
@@ -53,6 +53,8 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "cross-env": "^5.2.0",
     "cssnano": "^4.1.10",
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.2.0",
@@ -73,10 +75,14 @@
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "prettier-stylelint": "^0.4.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "rollup": "^1.12.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-size-snapshot": "^0.9.0",
@@ -88,9 +94,10 @@
   },
   "scripts": {
     "test": "jest",
-    "dev": "rollup -c -w",
+    "dev": "NODE_ENV=development rollup -c -w",
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
     "storybook": "start-storybook -p 6006",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "doc": "docz dev"
   }
 }

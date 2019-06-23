@@ -24,21 +24,21 @@
     "gzipped": 4633
   },
   "lib/bundle.cjs.js": {
-    "bundled": 18362,
-    "minified": 18359,
-    "gzipped": 4633
+    "bundled": 20213,
+    "minified": 16325,
+    "gzipped": 4155
   },
   "lib/bundle.esm.js": {
-    "bundled": 12855,
-    "minified": 12822,
-    "gzipped": 3914,
+    "bundled": 19064,
+    "minified": 15208,
+    "gzipped": 4059,
     "treeshaked": {
       "rollup": {
-        "code": 12694,
-        "import_statements": 397
+        "code": 11417,
+        "import_statements": 281
       },
       "webpack": {
-        "code": 14437
+        "code": 12933
       }
     }
   }

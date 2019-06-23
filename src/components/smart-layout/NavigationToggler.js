@@ -1,13 +1,18 @@
-import { connect } from 'react-redux';
+import React from 'react';
+// import PropTypes from 'prop-types';
 
-import NavigationTogglerComponent from './NavigationTogglerComponent';
-import { toggleNavigation } from '../../actions';
+import { getAdminElementId } from '../../helpers';
 
-const mapDispatchToProps = dispatch => ({
-  toggle: () => dispatch(toggleNavigation()),
-});
+const NavigationToggler = () => (
+  <button
+    type="button"
+    onClick={() => {}}
+    className="is-block no-background"
+    id={getAdminElementId('nav', 'toggler')}>
+    {/* <Icon type={opened ? 'right' : 'left'} /> */}
+  </button>
+);
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(NavigationTogglerComponent);
+NavigationToggler.propTypes = {};
+
+export default NavigationToggler;

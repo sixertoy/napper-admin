@@ -1,25 +1,38 @@
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-import NavigationItemComponent from './NavigationItemComponent';
-import { toggleNavigation } from '../../actions';
+import { getAdminElementId } from '../../helpers';
 
-const mapStateToProps = ({ showNavigation: minimized }) => ({
-  minimized,
-});
+const parseDestination = path => {
+  const rootpath = `/${path.split('/').slice(1, 2)}`;
+  return rootpath;
+};
 
-const mapDispatchToProps = dispatch => ({
-  toggle: minimized => {
-    if (minimized) return;
-    dispatch(toggleNavigation());
-  },
-});
+const NavigationItem = ({ icon, name, path }) => (
+  <NavLink
+    exact
+    to={parseDestination(path)}
+    onClick={() => {
+      // toggle(minimized)
+    }}
+    activeClassName="active disabled"
+    className={getAdminElementId('nav', 'item')}>
+    <i className={`icon icon-${icon} text-center is-inline-block`} />
+    <span className="label">{name}</span>
+  </NavLink>
+);
 
-export default compose(
-  withRouter,
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )
-)(NavigationItemComponent);
+NavigationItem.defaultProps = {
+  // minimized: false,
+};
+
+NavigationItem.propTypes = {
+  icon: PropTypes.string.isRequired,
+  // minimized: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  // toggle: PropTypes.func.isRequired,
+};
+
+export default NavigationItem;

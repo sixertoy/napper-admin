@@ -6,17 +6,15 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
 // import LinkedPages from './subpage';
-import PageTitle from './page/title';
-import PageSubtitle from './page/subtitle';
+import withLayoutPage from './withSmartLayout';
 // import SidebarControl from './sidebar-control';
 // import { slugify } from '../../utils/strings';
 // import { pathnameToKey } from '../../utils/router';
 
-const renderRouterSwitch = views => {
-  if (!views || !views.length) return null;
+const renderRouterSwitch = childs => {
   return (
     <Switch>
-      {views.map(obj => {
+      {childs.map(obj => {
         const { component, path } = obj;
         const isvalid = component && path;
         if (!isvalid) {
@@ -41,49 +39,39 @@ const renderRouterSwitch = views => {
 };
 
 // application
-const SmartPageComponent = ({
+const SmartLayoutPage = ({
   children,
   // isCollapsable,
   // isEntityPage,
   // links,
+  childs,
   name,
-  pageId,
-  sidebarClassname,
+  path,
+  // showSidebar,
   subtitle,
-  views,
-}) => (
-  <div id={pageId} className="page">
-    {/* <BackTop visibilityHeight={200} /> */}
-    <div className="flex-columns flex-between items-center pb12 mb20 bb1">
-      <PageTitle text={name} />
-      {/* {(links && <LinkedPages items={links} />) || null} */}
-      {/* {(isCollapsable && <SidebarControl />) || null} */}
-    </div>
-    {subtitle && <PageSubtitle text={subtitle} />}
-    <div className={`flex-columns flex-between mt20 ${sidebarClassname}`}>
-      {!views && children}
-      {views && renderRouterSwitch(views)}
-    </div>
-  </div>
-);
-
-SmartPageComponent.defaultProps = {
-  children: null,
-  // links: null,
-  subtitle: null,
-  views: null,
+}) => {
+  const pageId = `${path}-page`;
+  const hasChilds = childs && childs.length;
+  return (
+    <React.Fragment>
+      {!children && hasChilds && renderRouterSwitch(childs)}
+      {!childs && children}
+    </React.Fragment>
+  );
 };
 
-SmartPageComponent.propTypes = {
+SmartLayoutPage.defaultProps = {
+  children: null,
+  childs: null,
+  // links: null,
+  // sidebarClassname: false,
+  // showSidebar: false,
+  subtitle: null,
+};
+
+SmartLayoutPage.propTypes = {
   children: PropTypes.node,
-  // isCollapsable: PropTypes.bool.isRequired,
-  // isEntityPage: PropTypes.bool.isRequired,
-  // links: PropTypes.array,
-  name: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
-  sidebarClassname: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-  views: PropTypes.arrayOf(
+  childs: PropTypes.arrayOf(
     // TODO create a proptypes object for routes
     PropTypes.shape({
       component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
@@ -91,6 +79,14 @@ SmartPageComponent.propTypes = {
       path: PropTypes.string.isRequired,
     })
   ),
+  // isCollapsable: PropTypes.bool.isRequired,
+  // isEntityPage: PropTypes.bool.isRequired,
+  // links: PropTypes.array,
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  // sidebarClassname: PropTypes.string,
+  // showSidebar: PropTypes.bool,
+  subtitle: PropTypes.string,
 };
 
-export default SmartPageComponent;
+export default withLayoutPage(SmartLayoutPage);

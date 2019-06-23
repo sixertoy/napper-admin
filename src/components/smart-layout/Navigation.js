@@ -1,9 +1,20 @@
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import NavigationComponent from './NavigationComponent';
+// application
+// import { RoutesType } from '../types';
+import NavigationItem from './NavigationItem';
+import NavigationToggler from './NavigationToggler';
 import { getRouteItemUniqKey } from './utils';
+import { getAdminElementId } from '../../helpers';
+
+const buildNavigation = items =>
+  items && items.map(obj => <NavigationItem {...obj} />);
+
+const toggleNavigation = () => {
+  // eslint-disable-next-line no-console
+  console.log('TODO pass a function to toggle navigation');
+};
 
 const parseNavigationItems = (items, filterAdminPages = false) =>
   items &&
@@ -15,18 +26,24 @@ const parseNavigationItems = (items, filterAdminPages = false) =>
       return { ...obj, key };
     });
 
-export const mapStateToProps = (state, { pages }) => {
+const Navigation = ({ pages }) => {
   const mainpages = parseNavigationItems(pages) || [];
   const adminpages = parseNavigationItems(pages, true) || [];
-  return {
-    adminpages,
-    mainpages,
-    // minimized,
-    // path,
-  };
+  return (
+    <div id={getAdminElementId('navigation')}>
+      <nav className={getAdminElementId('nav')}>
+        <NavigationToggler toggle={toggleNavigation} />
+        {buildNavigation(mainpages)}
+      </nav>
+      <nav className={getAdminElementId('nav')}>
+        {buildNavigation(adminpages)}
+      </nav>
+    </div>
+  );
 };
 
-export default compose(
-  withRouter,
-  connect(mapStateToProps)
-)(NavigationComponent);
+Navigation.propTypes = {
+  pages: PropTypes.array.isRequired,
+};
+
+export default Navigation;

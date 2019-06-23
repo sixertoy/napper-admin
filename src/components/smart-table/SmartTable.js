@@ -1,14 +1,32 @@
-import { connect } from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import SmartTableComponent from './SmartTableComponent';
+// application
+import SmartTableTbody from './table/tbody';
+import SmartTableThead from './table/thead';
+import SmartTableCaption from './table/caption';
+import SmartTableColGroup from './table/colgroup';
+import { SmartTableColType } from './types';
 
-const mapStateToProps = null;
+class SmartTable extends React.PureComponent {
+  render() {
+    const { cols, provider } = this.props;
+    return (
+      <div className="">
+        <table>
+          <SmartTableCaption provider={provider} />
+          <SmartTableColGroup cols={cols} />
+          <SmartTableThead cols={cols} />
+          <SmartTableTbody cols={cols} provider={provider} />
+        </table>
+      </div>
+    );
+  }
+}
 
-const mapDispatchToProps = null;
-
-const SmartTable = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SmartTableComponent);
+SmartTable.propTypes = {
+  cols: SmartTableColType.isRequired,
+  provider: PropTypes.array.isRequired,
+};
 
 export default SmartTable;
