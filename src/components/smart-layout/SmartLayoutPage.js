@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
 // import LinkedPages from './subpage';
-import withLayoutPage from './withSmartLayout';
+import withSmartLayoutPage from './withSmartLayoutPage';
 // import SidebarControl from './sidebar-control';
 // import { slugify } from '../../utils/strings';
 // import { pathnameToKey } from '../../utils/router';
@@ -89,4 +89,4 @@ SmartLayoutPage.propTypes = {
   subtitle: PropTypes.string,
 };
 
-export default withLayoutPage(SmartLayoutPage);
+export default withSmartLayoutPage(SmartLayoutPage);
