@@ -6,7 +6,7 @@ import { QLObject, ColObject } from './types';
 import { NoContent, TinyError, TinyLoader } from '../ui';
 
 const withApollo = (entity, cols, queries, variables) => WrappedComponent => {
-  class _withApollo extends React.PureComponent {
+  class ComponentWrapper extends React.PureComponent {
     render() {
       return (
         <Query query={queries.query} variables={variables}>
@@ -16,10 +16,10 @@ const withApollo = (entity, cols, queries, variables) => WrappedComponent => {
             const provider = data[entity] || null;
             const showContent = Boolean(provider && provider.length);
             return (
-              <React.Fragment>
+              <>
                 {!showContent && <NoContent />}
                 {showContent && <WrappedComponent {...this.props} />}
-              </React.Fragment>
+              </>
             );
           }}
         </Query>
@@ -27,7 +27,7 @@ const withApollo = (entity, cols, queries, variables) => WrappedComponent => {
     }
   }
 
-  return _withApollo;
+  return ComponentWrapper;
 };
 
 export default withApollo;

@@ -7,15 +7,12 @@
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
   "engines": {
-    "node": "^10.6.0"
+    "node": "^10.6.0 || ^12.13.1"
   },
   "files": [
     "lib"
   ],
   "dependencies": {
-    "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git#latest",
-    "@iziges/napper-forms": "ssh://git@github.com:sixertoy/napper-forms.git#latest",
-    "@iziges/napper-styles": "ssh://git@github.com:sixertoy/napper-styles.git#latest",
     "apollo-cache-inmemory": "^1.3.8",
     "apollo-client": "^2.4.5",
     "apollo-link": "^1.2.3",
@@ -27,33 +24,30 @@
     "react-apollo": "^2.2.4",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.1.0",
-    "react-router-dom": "^4.3.0",
     "redux": "^4.0.1"
   },
   "peerDependencies": {
+    "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git#latest",
+    "@iziges/napper-forms": "ssh://git@github.com:sixertoy/napper-forms.git#latest",
+    "@iziges/napper-styles": "ssh://git@github.com:sixertoy/napper-styles.git#latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^4.3.0"
+    "react-jss": "^10.0.0",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-console": "^1.1.0",
-    "@storybook/addon-info": "^5.1.1",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/react": "^5.0.11",
     "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
     "cross-env": "^5.2.0",
     "cssnano": "^4.1.10",
-    "docz": "^1.2.0",
+    "docsify": "^4.9.4",
     "docz-theme-default": "^1.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "17.1.0",
@@ -100,8 +94,7 @@
     "test": "jest",
     "dev": "NODE_ENV=development rollup -c -w",
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
-    "storybook": "start-storybook -p 6006",
-    "prepare": "npm run build",
-    "doc": "docz dev"
+    "prepublish": "yarn build",
+    "docs": "docsify serve docs --port 5000"
   }
 }

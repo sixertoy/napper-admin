@@ -15,7 +15,6 @@ export const ActionHandlersObject = PropTypes.shape({
 export const SmartTableColType = PropTypes.arrayOf(
   PropTypes.shape({
     classname: PropTypes.string,
-    // TODO: trouver une moyen de faire requireOneOfTheseProps([])
     key: PropTypes.oneOfType([PropTypes.func, PropTypes.string]).isRequired,
     label: PropTypes.string.isRequired,
     // TODO: rendre primary obligatoire sur un object de type col

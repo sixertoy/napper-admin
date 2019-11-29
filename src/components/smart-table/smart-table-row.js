@@ -4,34 +4,36 @@ import { Link, withRouter } from 'react-router-dom';
 
 import { SmartTableColType } from '../types';
 import {
-  KEY_PREFIX,
   resolveLinkDestination,
   resolveColClassname,
   resolveColValue,
-} from '../utils';
+} from './utils';
 
 const renderValueAsIcon = colvalue => {
   const type = (colvalue && 'check') || 'close';
   return type;
 };
 
-const renderActionsButton = (id, basedest) => (
-  <td key={`${KEY_PREFIX}::tbody::tr::${id}::actions`}>
-    <Link to={`${basedest}/edit`} className="">
+const renderActionsButton = (id, baseurl) => (
+  <td key={`tbody::tr::${id}::actions`}>
+    <Link to={`/${baseurl}/edit`} className="">
       <i className="icon icon-edit" />
       <span>Edit</span>
     </Link>
-    <Link to={`${basedest}/delete}`} className="">
+    <Link to={`/${baseurl}/delete`} className="">
       <i className="icon icon-delete" />
       <span>Delete</span>
     </Link>
   </td>
 );
 
-const SmartTableRow = ({ cols, data, location }) => {
-  const idkey = cols.find(obj => obj.primary).key;
-  const itemid = data[idkey];
-  const destinationBase = resolveLinkDestination(location, itemid);
+const SmartTableRow = ({ cols, data, history }) => {
+  const { location } = history;
+
+  const primaryKey = cols.find(obj => obj.primary).key;
+  const itemid = data[primaryKey];
+
+  const baseurl = resolveLinkDestination(location, itemid);
   return (
     <tr data-id={itemid}>
       {cols &&
@@ -41,24 +43,24 @@ const SmartTableRow = ({ cols, data, location }) => {
           const classname = resolveColClassname(col);
           return (
             <td
-              key={`${KEY_PREFIX}::tbody::tr::${itemid}::td::${col.key}`}
+              key={`tbody::tr::${itemid}::td::${col.key}`}
               className={classname}>
-              <Link to={`${destinationBase}/edit`} className="">
+              <Link to={`${baseurl}/edit`} className="">
                 {useicon && renderValueAsIcon(colvalue)}
                 {!useicon && <span>{colvalue}</span>}
               </Link>
             </td>
           );
         })}
-      {renderActionsButton(itemid, destinationBase)}
+      {renderActionsButton(itemid, baseurl)}
     </tr>
   );
 };
 
 SmartTableRow.propTypes = {
   cols: SmartTableColType.isRequired,
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  data: PropTypes.shape().isRequired,
+  history: PropTypes.shape().isRequired,
 };
 
 export default withRouter(SmartTableRow);
