@@ -24,9 +24,9 @@
     "gzipped": 4633
   },
   "lib/bundle.cjs.js": {
-    "bundled": 20772,
-    "minified": 16765,
-    "gzipped": 4122
+    "bundled": 16765,
+    "minified": 16761,
+    "gzipped": 4119
   },
   "lib/bundle.esm.js": {
     "bundled": 18881,
@@ -41,5 +41,15 @@
         "code": 13032
       }
     }
+  },
+  "lib/bundle.main.js": {
+    "bundled": 16765,
+    "minified": 16761,
+    "gzipped": 4119
+  },
+  "lib/bundle.min.js": {
+    "bundled": 16765,
+    "minified": 16761,
+    "gzipped": 4119
   }
 }

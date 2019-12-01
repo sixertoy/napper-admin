@@ -2,35 +2,25 @@ import autoprefixer from 'autoprefixer';
 import babel from 'rollup-plugin-babel';
 import commonJS from 'rollup-plugin-commonjs';
 import cssnano from 'cssnano';
-import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'postcss';
 import resolve from 'rollup-plugin-node-resolve';
 import sass from 'rollup-plugin-sass';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import { terser } from 'rollup-plugin-terser';
 
-import pkg from './package.json';
+import { dependencies, peerDependencies, main } from './package.json';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
+const nodeExternalBuiltIns = [];
 
 export default {
   external: [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
+    ...Object.keys(dependencies || {}),
+    ...Object.keys(peerDependencies || {}),
+    ...nodeExternalBuiltIns,
   ],
   input: 'src/index.js',
-  output: [
-    {
-      exports: 'named',
-      file: pkg.main,
-      format: 'cjs',
-    },
-    {
-      exports: 'named',
-      file: pkg.module,
-      format: 'es',
-    },
-  ],
+  output: [{ file: main, format: 'cjs' }],
   plugins: [
     sass({
       output: 'lib/styles.css',
@@ -39,7 +29,6 @@ export default {
           .process(css, { from: 'src/scss/styles.scss' })
           .then(result => result.css),
     }),
-    external({ includeDependencies: true }),
     resolve(),
     commonJS({ include: 'node_modules/**' }),
     babel({ exclude: 'node_modules/**' }),

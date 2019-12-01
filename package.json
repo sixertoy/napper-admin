@@ -4,8 +4,7 @@
   "description": "Napper Admin Components",
   "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
   "license": "ISC",
-  "main": "lib/bundle.cjs.js",
-  "module": "lib/bundle.esm.js",
+  "main": "lib/bundle.min.js",
   "engines": {
     "node": "^10.6.0 || ^12.13.1"
   },
@@ -94,6 +93,7 @@
     "test": "jest",
     "dev": "NODE_ENV=development rollup -c -w",
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
-    "docs": "docsify serve docs --port 5000"
+    "docs": "docsify serve docs --port 5000",
+    "prepare": "yarn build"
   }
 }
