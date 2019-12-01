@@ -27,9 +27,9 @@
     "redux": "^4.0.1"
   },
   "peerDependencies": {
-    "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git#latest",
-    "@iziges/napper-forms": "ssh://git@github.com:sixertoy/napper-forms.git#latest",
-    "@iziges/napper-styles": "ssh://git@github.com:sixertoy/napper-styles.git#latest",
+    "@iziges/napper-core": "ssh://git@github.com:sixertoy/napper-core.git",
+    "@iziges/napper-forms": "ssh://git@github.com:sixertoy/napper-forms.git",
+    "@iziges/napper-styles": "ssh://git@github.com:sixertoy/napper-styles.git",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -94,7 +94,6 @@
     "test": "jest",
     "dev": "NODE_ENV=development rollup -c -w",
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
-    "prepublish": "yarn build",
     "docs": "docsify serve docs --port 5000"
   }
 }
